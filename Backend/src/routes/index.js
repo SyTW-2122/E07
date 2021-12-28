@@ -9,10 +9,11 @@ router.post('/signup', async (req, res) => {
   const { nombre_usuario, contrasena, nombre, apellidos, telefono, dni, correo_electronico, fecha_nacimiento} = req.body;
   let reservas = [];
   let tlf = parseInt(telefono)
-  console.log({nombre_usuario, contrasena, nombre, apellidos, tlf, dni, correo_electronico, fecha_nacimiento, reservas})
   const nuevoUsuario = new User({nombre_usuario, contrasena, nombre, apellidos, tlf, dni, correo_electronico, fecha_nacimiento, reservas});
+
   await nuevoUsuario.save();
-  res.send('Testing signup');
+
+  res.send(nuevoUsuario);
 })
 
 router.post('/signin', async (req, res) => {

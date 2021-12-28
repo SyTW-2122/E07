@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,12 +13,12 @@ export class SigninComponent implements OnInit {
     contrasena: "",
   }
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   signIn() {
-    console.log(this.user);
+    this.authService.signIn(this.user).subscribe(res => console.log(res), err => console.log(err))
   }
 }

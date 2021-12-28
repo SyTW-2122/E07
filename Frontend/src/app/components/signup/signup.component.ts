@@ -11,14 +11,14 @@ import { AuthService } from '../../services/auth.service';
 export class SignupComponent implements OnInit {
 
   user = {
-    "nombre_usuario": "",
-    'contrasena': "",
-    'nombre': "",
-    'apellidos': "",
-    'telefono': 0,
-    'dni': "",
-    'correo_electronico': "",
-    'fecha_nacimiento': "",
+    nombre_usuario: "",
+    contrasena: "",
+    nombre: "",
+    apellidos: "",
+    telefono: 0,
+    dni: "",
+    correo_electronico: "",
+    fecha_nacimiento: "",
   }
 
   constructor(private authService: AuthService) { }
