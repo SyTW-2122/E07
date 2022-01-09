@@ -12,6 +12,7 @@ addons:
   chrome: stable
 
 before-script:
+  - cd Frontend
   - npm install
 
 script:
