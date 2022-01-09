@@ -12,7 +12,7 @@ addons:
   chrome: stable
 
 before-script:
-  - npm install -g @ angular/cli
+  - npm install
 
 script:
   - cd Frontend
