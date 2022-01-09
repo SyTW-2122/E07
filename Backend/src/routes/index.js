@@ -3,6 +3,8 @@ const router = Router();
 
 const User = require("../models/user")
 
+const jwt = require('jsonwebtoken');
+
 router.get('/', (req, res) => res.send('Hello world'))
 
 router.post('/signup', async (req, res) => {
@@ -13,7 +15,9 @@ router.post('/signup', async (req, res) => {
 
   await nuevoUsuario.save();
 
-  res.send(nuevoUsuario);
+  const token = jwt.sign({_id: nuevoUsuario._id}, 'secretKey');
+
+  return res.status(200).json({token});
 })
 
 router.post('/signin', async (req, res) => {
@@ -26,9 +30,33 @@ router.post('/signin', async (req, res) => {
     if (usuario.contrasena !== contrasena) {
       return res.status(401).send("Contraseña incorrecta");
     } else {
-      res.status(200).send("Todo bien compa")
+      const token = jwt.sign({_id: usuario._id}, 'secretKey');
+
+      return res.status(200).json({token})
     }
   }
 })
 
+router.get('/inicio', verifyToken, async (req, res) => {
+  let _id = req.userId;
+  let usuario = await User.findOne({_id})
+  res.json({usuario})
+})
+
 module.exports = router;
+
+function verifyToken(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send('Accesso no autorizado, debe loguearse');
+  } else {
+     const token = req.headers.authorization.split(' ')[1];
+
+     if (token === 'null') {
+       return res.status(401).send('Acceso no autorizado, debe loguearse');
+     } else {
+          const payload = jwt.verify(token, 'secretKey');
+          req.userId = payload._id;
+          next();  
+     }
+  }
+}

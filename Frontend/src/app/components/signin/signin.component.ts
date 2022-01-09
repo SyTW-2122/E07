@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-signin',
@@ -13,12 +14,18 @@ export class SigninComponent implements OnInit {
     contrasena: "",
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   signIn() {
-    this.authService.signIn(this.user).subscribe(res => console.log(res), err => console.log(err))
+    this.authService.signIn(this.user).subscribe(
+      res => {
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/inicio'])
+      },      
+      err => console.log(err)
+    )
   }
 }

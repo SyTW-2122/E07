@@ -4,11 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import {SignupComponent} from './components/signup/signup.component'
 import {SigninComponent} from './components/signin/signin.component'
+import { InicioComponent } from './components/inicio/inicio.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/signup',
+    redirectTo: '/inicio',
     pathMatch: 'full'
   },
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent
   }
 ];
 

@@ -18,4 +18,21 @@ export class AuthService {
   signIn(user: any) {
     return this.http.post<any>(this.URL + 'signin', user);
   }
+
+  inicio() {
+    return this.http.get(this.URL + 'inicio').subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+  }
+
+  loggedIn() {
+    return !!localStorage.getItem('token'); // Si el token existe retorna true y si no retorna false;
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
 }

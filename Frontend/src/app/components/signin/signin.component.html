@@ -9,11 +9,11 @@
                 <form (submit)="signIn()">
                     <div id="Entrada">
                         <label id="nombreUsuario"> Nombre de usuario (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
+                        <input class="EntradaTexto" ([ngModel])="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
                     </div>
                     <div id="Entrada">
                         <label id="contrasena"> Contraseña (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
+                        <input class="EntradaTexto" ([ngModel])="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
                     </div>
                     <button id="botonComprobar" type="submit"> INICIAR SESIÓN </button>
                 </form>
