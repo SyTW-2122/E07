@@ -16,7 +16,6 @@ before-script:
   - npm install
 
 script:
-  - cd Frontend
   - npm run lint
   - npm run test-headless
   - npm run build
