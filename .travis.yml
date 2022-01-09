@@ -11,6 +11,9 @@ cache:
 addons:
   chrome: stable
 
+before-script:
+  - npm install -g @ angular/cli
+
 script:
   - cd Frontend
   - npm run lint
