@@ -25,32 +25,30 @@ describe('SigninComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se debería crear el componente', () => {
     expect(component).toBeTruthy();
   });
 
-  // Comprobamos que cuando se crea el usuario se nos devuelve el token correspondiente a este usuario
-  it('Se rellenan bien los input', () => {
+
+  it('Hay un formulario con entrada para el nombre de usuario y la contraseña', () => {
+    const element = fixture.nativeElement;
+
+    expect(element.querySelector('form')).toBeTruthy();
+    expect(element.querySelector('#nombreUsuarioInput')).toBeTruthy();
+    expect(element.querySelector('#contrasenaInput')).toBeTruthy();
+  });
+
+  it('Se rellenan correctamente los input del formulario', () => {
     const element = fixture.nativeElement;
 
     element.querySelector('#nombreUsuarioInput').value = "alu0101206574";
     element.querySelector('#contrasenaInput').value = "alu0101206574";
 
-    //expect(element.querySelector('form')).toBeTruthy();
     expect(element.querySelector('#nombreUsuarioInput').value).toEqual("alu0101206574");
-    expect(element.querySelector('#contrasenaInput').value).toEqual("alu0101206574");  });
-
-  // Comprobamos que cuando se creael usuario se nos devuelve el token correspondiente a este usuario
-  it('Hay un formulario con entrada para el nombre de usuario, la contraseña, el nombre, los apellidos, el teléfono, el DNI, el correo electrónico y la fecha de nacimiento', () => {
-    const element = fixture.nativeElement;
-
-    //expect(element.querySelector('form')).toBeTruthy();
-    expect(element.querySelector('#nombreUsuarioInput')).toBeTruthy();
-    expect(element.querySelector('#contrasenaInput')).toBeTruthy();
+    expect(element.querySelector('#contrasenaInput').value).toEqual("alu0101206574");  
   });
 
-  // Comprobamos que cuando se crea el usuario se nos devuelve el token correspondiente a este usuario
-  it('Se ha iniciado sesión y se ha devuelto el token JWT', () => {
+  it('Comprobación función signIn()', () => {
     component.user = {
       nombre_usuario: "alu0101206574",
       contrasena: "alu0101206574",

@@ -24,13 +24,25 @@ describe('SignupComponent', () => {
     fixture.detectChanges();
   });
 
-  // Comprobamos que se crea un objeto de la clase SignUp
-  it('should create', () => {
+  it('Creación del componente', () => {
     expect(component).toBeTruthy();
   });
 
-  // Comprobamos que cuando se crea el usuario se nos devuelve el token correspondiente a este usuario
-  it('Se rellenan bien los input', () => {
+  it('Hay un formulario con entrada para el nombre de usuario, la contraseña, el nombre, los apellidos, el teléfono, el DNI, el correo electrónico y la fecha de nacimiento', () => {
+    const element = fixture.nativeElement;
+
+    expect(element.querySelector('form')).toBeTruthy();
+    expect(element.querySelector('#nombreUsuarioInput')).toBeTruthy();
+    expect(element.querySelector('#contrasenaInput')).toBeTruthy();
+    expect(element.querySelector('#nombreInput')).toBeTruthy();
+    expect(element.querySelector('#apellidosInput')).toBeTruthy();
+    expect(element.querySelector('#fechaNacimientoInput')).toBeTruthy();
+    expect(element.querySelector('#telefonoInput')).toBeTruthy();
+    expect(element.querySelector('#dniInput')).toBeTruthy();
+    expect(element.querySelector('#correoInput')).toBeTruthy();
+  });
+
+  it('Se rellenan correctamente los input del formulario', () => {
     const element = fixture.nativeElement;
 
     element.querySelector('#nombreUsuarioInput').value = "alu0101206574";
@@ -42,7 +54,6 @@ describe('SignupComponent', () => {
     element.querySelector('#dniInput').value = "47926377L";
     element.querySelector('#correoInput').value = "alu0101206574@ull.edu.es";
 
-    //expect(element.querySelector('form')).toBeTruthy();
     expect(element.querySelector('#nombreUsuarioInput').value).toEqual("alu0101206574");
     expect(element.querySelector('#contrasenaInput').value).toEqual("alu0101206574");
     expect(element.querySelector('#nombreInput').value).toEqual("JORGE");
@@ -53,23 +64,7 @@ describe('SignupComponent', () => {
     expect(element.querySelector('#correoInput').value).toEqual("alu0101206574@ull.edu.es");
   });
 
-  // Comprobamos que cuando se creael usuario se nos devuelve el token correspondiente a este usuario
-  it('Hay un formulario con entrada para el nombre de usuario, la contraseña, el nombre, los apellidos, el teléfono, el DNI, el correo electrónico y la fecha de nacimiento', () => {
-    const element = fixture.nativeElement;
-
-    //expect(element.querySelector('form')).toBeTruthy();
-    expect(element.querySelector('#nombreUsuarioInput')).toBeTruthy();
-    expect(element.querySelector('#contrasenaInput')).toBeTruthy();
-    expect(element.querySelector('#nombreInput')).toBeTruthy();
-    expect(element.querySelector('#apellidosInput')).toBeTruthy();
-    expect(element.querySelector('#fechaNacimientoInput')).toBeTruthy();
-    expect(element.querySelector('#telefonoInput')).toBeTruthy();
-    expect(element.querySelector('#dniInput')).toBeTruthy();
-    expect(element.querySelector('#correoInput')).toBeTruthy();
-  });
-
-  // Comprobamos que cuando se crea el usuario se nos devuelve el token correspondiente a este usuario
-  it('Se ha iniciado sesión y se ha devuelto el token JWT', () => {
+  it('Comprobación función signUn()', () => {
     component.user = {
       nombre_usuario: "alu0101206574",
       contrasena: "alu0101206574",

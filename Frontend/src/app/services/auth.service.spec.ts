@@ -14,33 +14,33 @@ describe('AuthService', () => {
     localStorage.setItem('token', "Prueba");
   }); 
 
-  it('should be created',  async () => {  
+  it('Se crea el servicio',  async () => {  
     expect(service).toBeTruthy();
   })
  
-  it('signup', () => {
+  it('Comprobación función signUp()', () => {
     let signUpF = spyOn(service, 'signUp')
     service.signUp({nombre_usuario: "alu0101206574", contrasena: "alu0101206574", nombre: "JORGE", apellidos: "GARCIA BORGES", telefono: 603948503, dni: "47926377L", correo_electronico: "alu0101206574@ull.edu.es",  fecha_nacimiento: "2000-12-18"});
     expect(signUpF).toHaveBeenCalled();
   });
 
-  it('signin', () => {
+  it('Comprobación función signIn()', () => {
     let signInF = spyOn(service, 'signIn')
     service.signIn({nombre_usuario: "alu0101206574", contrasena: "alu0101206574"});
     expect(signInF).toHaveBeenCalled();
   });
 
-  /*it('inicio', () => {
+  it('Comprobación función inicio()', () => {
     let inicioF = spyOn(service, 'inicio')
     service.inicio();
     expect(inicioF).toHaveBeenCalled();
-  });*/
+  });
 
-  it('loggedIn', () => {
+  it('Comprobación función loggedIn()', () => {
     expect(service.loggedIn()).toBeTruthy();    
   });
 
-  it('getToken', () => {
+  it('Comprobación función getToken()', () => {
     expect(service.getToken()).toEqual('Prueba');
   });
 });

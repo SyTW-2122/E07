@@ -28,7 +28,6 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-    //console.log("HAOASNJASDNDASIDSSADIBDSBIBSADIUUUUUUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     this.authService.signUp(this.user)
       .subscribe(
         res => {

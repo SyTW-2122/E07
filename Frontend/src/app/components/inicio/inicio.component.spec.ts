@@ -23,7 +23,7 @@ describe('InicioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se debería crear el componente', () => {
     expect(component).toBeTruthy();
   });
 });
