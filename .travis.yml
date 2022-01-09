@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "16.13.0"
+dist: trusty
+sudo: false
+
+cache:
+  directories:
+    - Frontend/node_modules
+
+addons:
+  chrome: stable
+
+script:
+  - npm run lint
+  - npm run test-headless
+  - npm run build

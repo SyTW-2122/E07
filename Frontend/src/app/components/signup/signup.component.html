@@ -11,35 +11,35 @@
                 <form name="formulario" (submit)="signUp()">
                     <div id="Entrada">
                         <label id="nombreUsuario"> Nombre de usuario (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
+                        <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
                     </div>
                     <div id="Entrada">
                         <label id="contrasena"> Contraseña (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
+                        <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
                     </div>
                     <div id="Entrada">
                         <label id="nombre"> Nombre (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.nombre"  name="nombre" id="nombreInput" type="text" required placeholder="Pepe">
+                        <input class="EntradaTexto" [(ngModel)]="user.nombre"  name="nombre" id="nombreInput" type="text" required placeholder="Pepe">
                     </div>
                     <div id="Entrada">
                         <label id="apellidos"> Apellidos (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.apellidos" name="apellidos" id="apellidosInput" type="text" required placeholder="Morales">
+                        <input class="EntradaTexto" [(ngModel)]="user.apellidos" name="apellidos" id="apellidosInput" type="text" required placeholder="Morales">
                     </div>
                     <div id="Entrada">
                         <label id="fechaNacimiento"> Fecha Nacimiento </label>
-                        <input class="EntradaTexto" ([ngModel])="user.fecha_nacimiento" name="fechaNacimiento" id="fechaNacimientoInput" type="date" required>
+                        <input class="EntradaTexto" [(ngModel)]="user.fecha_nacimiento" name="fechaNacimiento" id="fechaNacimientoInput" type="date" required>
                     </div>
                     <div id="Entrada">
                         <label id="telefono"> Teléfono (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.telefono" name="telefono" id="telefonoInput" type="text" required placeholder="654789321">     
+                        <input class="EntradaTexto" [(ngModel)]="user.telefono" name="telefono" id="telefonoInput" type="text" required placeholder="654789321">     
                     </div>
                     <div id="Entrada">
                         <label id="dni"> DNI (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.dni" name="dni" id="dniInput" type="text" required placeholder="65004204-V">
+                        <input class="EntradaTexto" [(ngModel)]="user.dni" name="dni" id="dniInput" type="text" required placeholder="65004204-V">
                     </div>
                     <div id="Entrada">
                         <label id="correo"> Correo electrónico (*) </label>
-                        <input class="EntradaTexto" ([ngModel])="user.correo_electronico" name="correo_electronico" id="correoInput" type="text" required placeholder="pepemorales@gmail.com">
+                        <input class="EntradaTexto" [(ngModel)]="user.correo_electronico" name="correo_electronico" id="correoInput" type="text" required placeholder="pepemorales@gmail.com">
                     </div>
                     <button id="botonComprobar" type="submit">CREAR USUARIO</button>
                 </form>
