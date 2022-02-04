@@ -1,7 +1,30 @@
-<header id="navegador">
-  <img id="logo" src="../assets/img/logo_riu.jpg">
-</header>
-
 <section>
   <router-outlet></router-outlet>
+  <footer class="footer">
+    <div class="contenedor1">
+        <div class="columna" id="columna1" tabindex="1">
+            <ul>
+                <li><a  href="#" tabindex="1"> RIU Buenavista </a></li>
+                <li><a  href="#" tabindex="1"> RIU Palace Tenerife </a></li>
+                <li><a  href="#" tabindex="1"> RIU Garoe </a></li>
+                <li><a  href="#" tabindex="1"> RIU Arecas </a></li>
+            </ul>
+        </div>
+        <div class="columna" id="columna2" tabindex="1">
+            <h3> RIU Tenerife </h3>
+            <hr>
+        </div>
+        <div class="columna" id="columna3" tabindex="1">
+            <ul>
+                <li><a  routerLink="/inicio" tabindex="1"> Home </a></li>
+                <li><a  routerLink="/signup" tabindex="1"> Crear cuenta </a></li>
+                <li><a  routerLink="/signin" tabindex="1"> Mi cuenta </a></li>
+                <li><a  href="#" tabindex="1"> Sobre nosotros </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor2">
+        <p> Este proyecto es una simulación ficticia inspirandonos en la cadena hotelera RIU. Todos los nombres, imágenes y contenido textual pertenecen a RIU Hotels & Resorts.</p>
+    </div>
+  </footer>
 </section>

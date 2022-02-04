@@ -1,0 +1,54 @@
+/* Tarjetas */
+
+.contenedor{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedor .card{
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    position: static;
+}
+
+
+.contenedor .card img{
+    width: 350px;
+    height: 250px;
+}
+
+
+.contenedor .card h4{
+    color: #2D2D2D;
+}
+
+.contenedor .card p{
+    padding: 0 1rem;
+    color: #2D2D2D;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.contenedor .card a {
+    color: #b30724c5;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-decoration: none; /* Quitar línea subrayada*/
+}
+
+.contenedor .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}

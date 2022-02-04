@@ -19,3 +19,6 @@ script:
   - npm run lint
   - npm run test-headless
   - npm run build
+
+notifications:
+  slack: 'sytw:GgiUiOJJeifKY0uamYUGF1Zr#07'
