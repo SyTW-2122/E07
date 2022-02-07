@@ -20,12 +20,7 @@ export class AuthService {
   }
 
   inicio() {
-    return this.http.get(this.URL + 'inicio').subscribe(
-      res => {
-        console.log(res);
-      },
-      err => console.log(err)
-    )
+    return this.http.get(this.URL + 'inicio');
   }
 
   loggedIn() {

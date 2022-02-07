@@ -2,6 +2,7 @@ const { Router } = require('express')
 const router = Router();
 
 const User = require("../models/user")
+const Hotel = require("../models/hotel")
 
 const jwt = require('jsonwebtoken');
 
@@ -38,9 +39,8 @@ router.post('/signin', async (req, res) => {
 })
 
 router.get('/inicio', verifyToken, async (req, res) => {
-  let _id = req.userId;
-  let usuario = await User.findOne({_id})
-  res.json({usuario})
+  let hoteles = await Hotel.find()
+  res.send(hoteles);
 })
 
 module.exports = router;

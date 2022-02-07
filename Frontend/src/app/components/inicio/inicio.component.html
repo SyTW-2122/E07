@@ -7,33 +7,7 @@
     <li><a routerLink="/signup" routerLinkActive="active"> Crear cuenta </a></li>
     <li><a routerLink="/signin" routerLinkActive="active"> Mi cuenta </a></li>
   </ul>
-  <div class="contenedor">
-    <div class="card" tabindex="1">
-        <img src="../../../assets/img/riuBuenavista.jpg">
-        <h4 tabindex="1"> RIU Buenavista ★★★★ </h4>
-        <p tabindex="1"> El Hotel Riu Buenavista se encuentra ubicado en la urbanización Playa Paraíso y cuenta con unas impresionantes vistas al mar. </p>
-        <a href="#" tabindex="1">Leer más</a>
-    </div>
-    
-    <div class="card" tabindex="1">
-        <img src="../../../assets/img/riuPalace.jpg">
-        <h4 tabindex="1"> RIU Palace Tenerife ★★★★★ </h4>
-        <p tabindex="1"> Rodeado de un paisaje único y con vistas al mar, el Hotel Riu Palace Tenerife te ofrece los mejores servicios de RIU Hotels & Resorts. </p>
-        <a href="#" tabindex="1">Leer más</a>
-    </div>
-    
-    <div class="card" tabindex="1">
-        <img src="../../../assets/img/riuGaroe.jpg">
-        <h4 tabindex="1"> RIU Garoe ★★★★ </h4>
-        <p tabindex="1"> El Hotel Riu Garoe se encuentra ubicado en Puerto de la Cruz, Tenerife, y es perfecto para disfrutar de unas vacaciones inolvidables. </p>
-        <a href="#" tabindex="1">Leer más</a>
-    </div>
+  <div class="contenedor" [innerHTML] = "tarjetas">
 
-    <div class="card" tabindex="1">
-        <img src="../../../assets/img/riuArecas.jpg">
-        <h4 tabindex="1"> RIU Arecas ★★★★ </h4>
-        <p tabindex="1"> El Hotel Riu Arecas es un hotel de 4 estrellas de Tenerife, España destinado a Adults Only (Solo Adultos), idóneo para disfrutar de paisajes únicos. </p>
-        <a  href="#" tabindex="1">Leer más</a>
-    </div>
   </div>
 </body>

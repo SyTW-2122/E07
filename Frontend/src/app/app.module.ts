@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 
+import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -27,6 +28,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
     CookieService,
     {
       provide: HTTP_INTERCEPTORS,
