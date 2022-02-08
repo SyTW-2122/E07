@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class AuthService {
 
   private URL = 'http://10.6.131.175:80/'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   signUp(user: any) {
     return this.http.post<any>(this.URL + 'signup', user);
@@ -23,8 +24,25 @@ export class AuthService {
     return this.http.get(this.URL + 'inicio');
   }
 
+  perfil_usuario() {
+    return this.http.get(this.URL + 'perfil-usuario');
+  }
+
+  reserva_hotel(reserva: any) {
+    return this.http.post(this.URL + 'reserva-hotel', reserva);
+  }
+
+  obtener_reservas() {
+    return this.http.get(this.URL + 'perfil-reservas');
+  }
+
   loggedIn() {
     return !!localStorage.getItem('token'); // Si el token existe retorna true y si no retorna false;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/inicio'])
   }
 
   getToken() {

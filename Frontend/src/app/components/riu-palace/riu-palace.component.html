@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row">
+        <div class="col-100">
+            <h4 id="nombreHotel"> RIU Palace ★★★★★ </h4>
+            <hr id="linea">
+        </div>
+    </div>
+    <div class="formulario1">
+      <form name="formulario" (submit)="reserva_habitacion()">
+            <div class="col-25">
+                <label> Tipo de habitacion (*) </label>
+            </div>
+            <div class="col-25">
+                <label> Número de huéspedes (*) </label>
+            </div>
+            <div class="col-25">
+                <label> Fecha de entrada </label>
+            </div>
+            <div class="col-25">
+                <label> Fecha de salida </label>
+            </div>
+            <div class="col-25">
+                <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                    <option value="Habitación familiar">Habitación familiar</option>
+                    <option value="Habitación deluxe" selected>Habitación deluxe</option>
+                    <option value="Habitación suite">Habitación suite</option>
+                </select>
+            </div>
+            <div class="col-25">
+                <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="col-25">
+                <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+            </div>
+            <div class="col-25">
+                <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>
+            </div>
+            <div class="row">
+                <div class="col-100">
+                    <button id="botonReservar" type="submit">RESERVAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Formulario que se muestra cuando se achica la página -->
+    <div class="formulario2">
+        <form name="formulario" (submit)="reserva_habitacion()">
+            <label> Tipo de habitacion (*) </label>
+            <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                <option value="1">Habitación familiar</option>
+                <option value="2" selected>Habitación deluxe</option>
+                <option value="3">Habitación suite</option>
+            </select>
+            <label> Número de huéspedes (*) </label>
+            <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+            </select>
+            <label> Fecha de entrada </label>
+            <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+            <label> Fecha de salida </label>
+            <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>      
+            <div class="col-100">
+                <button id="botonReservar" type="submit">RESERVAR</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <p>
+              Rodeado de un paisaje único y con vistas al mar, el Hotel Riu Palace Tenerife te ofrece la oportunidad de vivir unas vacaciones inolvidables en las Islas Canarias. Este hotel en Tenerife cuenta con los mejores servicios de RIU Hotels & Resorts, como WiFi gratuito, infinity pool con camas balinesas, centro de bienestar y una exquisita gastronomía.
+            </p>
+            <p>
+              Las más de 300 habitaciones del Hotel Riu Palace Tenerife están completamente equipadas para ofrecerte la máxima comodidad durante tu estancia. Podrás disfrutar de TV satélite, aire acondicionado, amenities y balcón o terraza para sorprenderte con los alrededores del hotel. En las instalaciones del Hotel Riu Palace Tenerife encontrarás 2 piscinas exteriores, una infinity pool con camas balinesas, una piscina para niños y una piscina interior climatizada para que disfrutes de tus vacaciones en Tenerife.
+            </p>
+        </div>
+        <div class="col-50">
+            <div class="CarruselFotos">
+                <div class="mySlides fade">
+                    <img class="imagenes" src="./../../../assets/img/riu-palace/palace1.jpg">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>    
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+</script>

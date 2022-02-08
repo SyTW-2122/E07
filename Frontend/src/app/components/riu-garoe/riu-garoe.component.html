@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row">
+        <div class="col-100">
+            <h4 id="nombreHotel"> RIU Garoe ★★★★ </h4>
+            <hr id="linea">
+        </div>
+    </div>
+    <div class="formulario1">
+      <form name="formulario" (submit)="reserva_habitacion()">
+            <div class="col-25">
+                <label> Tipo de habitacion (*) </label>
+            </div>
+            <div class="col-25">
+                <label> Número de huéspedes (*) </label>
+            </div>
+            <div class="col-25">
+                <label> Fecha de entrada </label>
+            </div>
+            <div class="col-25">
+                <label> Fecha de salida </label>
+            </div>
+            <div class="col-25">
+                <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                    <option value="Habitación familiar">Habitación familiar</option>
+                    <option value="Habitación deluxe" selected>Habitación deluxe</option>
+                    <option value="Habitación suite">Habitación suite</option>
+                </select>
+            </div>
+            <div class="col-25">
+                <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="col-25">
+                <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+            </div>
+            <div class="col-25">
+                <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>
+            </div>
+            <div class="row">
+                <div class="col-100">
+                    <button id="botonReservar" type="submit">RESERVAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Formulario que se muestra cuando se achica la página -->
+    <div class="formulario2">
+        <form name="formulario" (submit)="reserva_habitacion()">
+            <label> Tipo de habitacion (*) </label>
+            <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                <option value="1">Habitación familiar</option>
+                <option value="2" selected>Habitación deluxe</option>
+                <option value="3">Habitación suite</option>
+            </select>
+            <label> Número de huéspedes (*) </label>
+            <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+            </select>
+            <label> Fecha de entrada </label>
+            <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+            <label> Fecha de salida </label>
+            <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>      
+            <div class="col-100">
+                <button id="botonReservar" type="submit">RESERVAR</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-50">
+            <p>
+              La gastronomía de este hotel en Tenerife está pensada para todo tipo de gustos. En sus restaurantes podrás disfrutar de los mejores platos de cocina fusión y española y de desayunos buffet muy variados en la terraza con vistas al mar. Además, la carta gastronómica es tan amplia que ofrecemos exquisitos platos vegetarianos para quien los desee. En el Hotel Riu Palace Tenerife también encontrarás un bar en la piscina, un lounge bar y un lobby bar para disfrutar de los mejores refrescos y aperitivos.
+            </p>
+            <p>
+              Tanto la diversión como el relax están asegurados en nuestro hotel en Tenerife. Gracias a nuestro programa de entretenimiento disfrutarás de música e increíbles shows en directo y en nuestro centro de bienestar te relajarás en la sauna y salas de masajes. Y si lo deseas, podrás practicar deporte en nuestro gimnasio o golf en las cercanías del Hotel Riu Garoe Tenerife.
+            </p>
+        </div>
+        <div class="col-50">
+            <div class="CarruselFotos">
+                <div class="mySlides fade">
+                    <img class="imagenes" src="./../../../assets/img/riu-garoe/garoe1.jpg">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>    
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+</script>

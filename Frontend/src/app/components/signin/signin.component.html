@@ -1,31 +1,21 @@
-<body>
-    <header id="navegador">
-        <img id="logo" src="../assets/img/logo_riu.jpg">
-    </header>
-    <ul class="menu">
-    <li><a routerLink="/inicio" routerLinkActive="active"> Home </a></li>
-    <li><a routerLink="/signup" routerLinkActive="active"> Crear cuenta </a></li>
-    <li><a class="active" routerLink="/signin" routerLinkActive="active"> Mi cuenta </a></li>
-    </ul>
-    <div class="contenedor">
-        <div class="espacio"></div>
-        <div class="tarjeta">
-            <p id="titulo"> INICIO DE SESIÓN </p>
-            <hr>
-            <img src="../../../assets/img/user_icon.png" class="imagenUsuario">
-            <div class="input">
-                <form (submit)="signIn()">
-                    <div id="Entrada">
-                        <label id="nombreUsuario"> Nombre de usuario (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
-                    </div>
-                    <div id="Entrada">
-                        <label id="contrasena"> Contraseña (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
-                    </div>
-                    <button id="botonComprobar" type="submit"> INICIAR SESIÓN </button>
-                </form>
-            </div>
+<div class="contenedor">
+    <div class="espacio"></div>
+    <div class="tarjeta">
+        <p id="titulo"> INICIO DE SESIÓN </p>
+        <hr>
+        <img src="../../../assets/img/user_icon.png" class="imagenUsuario">
+        <div class="input">
+            <form (submit)="signIn()">
+                <div id="Entrada">
+                    <label id="nombreUsuario"> Nombre de usuario (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
+                </div>
+                <div id="Entrada">
+                    <label id="contrasena"> Contraseña (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
+                </div>
+                <button id="botonComprobar" type="submit"> INICIAR SESIÓN </button>
+            </form>
         </div>
     </div>
-</body>
+</div>

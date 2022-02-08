@@ -8,8 +8,7 @@ const esquemaUsuario = new Schema({
   telefono: Number,
   dni: String,
   correo_electronico: String,
-  fecha_nacimiento: String,
-  reservas: []
+  fecha_nacimiento: String
 })
 
 module.exports = model('User', esquemaUsuario);

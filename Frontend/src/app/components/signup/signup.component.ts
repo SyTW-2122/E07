@@ -29,7 +29,17 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-    this.authService.signUp(this.user)
+    let fecha_actual = new Date();
+    let date_nacimiento = new Date(this.user.fecha_nacimiento);
+    let edad = fecha_actual.getFullYear() - date_nacimiento.getFullYear();
+    var m = fecha_actual.getMonth() - date_nacimiento.getMonth();
+
+    if (m < 0 || (m === 0 && fecha_actual.getDate() < date_nacimiento.getDate())) {
+        edad--;
+    }
+
+    if (edad >= 18) {
+          this.authService.signUp(this.user)
       .subscribe(
         res => {
           console.log(res)
@@ -38,5 +48,9 @@ export class SignupComponent implements OnInit {
         },
         err => console.log(err)
       )
+    } else {
+      alert ("Para registrarte en la plataforma debes tener mínimo 18 años");
+    }
+
   }
 }

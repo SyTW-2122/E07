@@ -1,3 +1,19 @@
+<header id="navegador">
+    <img id="logo" src="../assets/img/logo_riu.jpg">
+</header>
+<ul class="menu">
+    <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        
+        <li><a routerLink="/signin"> Iniciar sesión </a></li>
+        <li><a routerLink="/signup"> Crear cuenta </a></li>
+    </ng-container>
+    <ng-template #loggedIn>
+        <li><a routerLink="/inicio"> Inicio </a></li>
+        <li><a routerLink="/perfil-usuario"> Perfil de usuario </a></li>
+        <li><a (click)="authService.logout()">Cerrar sesión </a></li>
+    </ng-template>
+    
+</ul>
 <section>
   <router-outlet></router-outlet>
   <footer class="footer">

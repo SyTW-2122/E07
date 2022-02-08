@@ -1,0 +1,128 @@
+  <div class="container">
+      <div class="row">
+          <div class="col-100">
+              <h4 id="nombreHotel"> RIU Buenavista ★★★★ </h4>
+              <hr id="linea">
+          </div>
+      </div>
+      <div class="formulario1">
+        <form name="formulario" (submit)="reserva_habitacion()">
+              <div class="col-25">
+                  <label> Tipo de habitacion (*) </label>
+              </div>
+              <div class="col-25">
+                  <label> Número de huéspedes (*) </label>
+              </div>
+              <div class="col-25">
+                  <label> Fecha de entrada </label>
+              </div>
+              <div class="col-25">
+                  <label> Fecha de salida </label>
+              </div>
+              <div class="col-25">
+                  <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                      <option value="Habitación familiar">Habitación familiar</option>
+                      <option value="Habitación deluxe" selected>Habitación deluxe</option>
+                      <option value="Habitación suite">Habitación suite</option>
+                  </select>
+              </div>
+              <div class="col-25">
+                  <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                  </select>
+              </div>
+              <div class="col-25">
+                  <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+              </div>
+              <div class="col-25">
+                  <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>
+              </div>
+              <div class="row">
+                  <div class="col-100">
+                      <button id="botonReservar" type="submit">RESERVAR</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+
+
+      <!-- Formulario que se muestra cuando se achica la página -->
+      <div class="formulario2">
+          <form name="formulario" (submit)="reserva_habitacion()">
+              <label> Tipo de habitacion (*) </label>
+              <select class="seleccionFormulario" [(ngModel)]="reserva.tipo_habitacion" name="tipo_habitacion" id="tipoHabitacionInput" required>
+                  <option value="1">Habitación familiar</option>
+                  <option value="2" selected>Habitación deluxe</option>
+                  <option value="3">Habitación suite</option>
+              </select>
+              <label> Número de huéspedes (*) </label>
+              <select class="seleccionFormulario" [(ngModel)]="reserva.numero_huespedes" name="numeroHuespedes" id="numeroHuespedesInput" required>
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+              </select>
+              <label> Fecha de entrada </label>
+              <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_entrada" name="fechaEntrada" id="fechaEntradaInput" type="date" required>
+              <label> Fecha de salida </label>
+              <input class="seleccionFormulario" [(ngModel)]="reserva.fecha_salida" name="fechaSalida" id="fechaSalidaInput" type="date" required>      
+              <div class="col-100">
+                  <button id="botonReservar" type="submit">RESERVAR</button>
+              </div>
+          </form>
+      </div>
+      <div class="row">
+          <div class="col-50">
+              <p>
+                  El Hotel Riu Buenavista se encuentra ubicado en la urbanización Playa Paraíso y cuenta con unas impresionantes vistas al mar. Este hotel todo incluido 24 horas en Tenerife destaca por ser uno de los mejores hoteles de la isla y por ofrecerte el servicio exclusivo de RIU Hotels & Resorts para que vivas una auténticas vacaciones.
+              </p>
+              <p>
+                  Este hotel todo incluido 24 horas cuenta con más de 500 habitaciones equipadas con todo lo necesario para proporcionarte las mejores comodidades. Todas ellas cuentan con aire acondicionado, TV satélite, caja fuerte y balcón o terraza, entre muchos servicios más. Y si buscas refrescarte y disfrutar del sol isleño, el Hotel Riu Buenavista pone a tu disposición 4 piscinas con zona de tumbonas para que consigas el máximo descanso. Aunque si prefieres el mar, puedes acercarte a la playa ubicada a escasos metros del hotel.
+              </p>
+          </div>
+          <div class="col-50">
+              <div class="CarruselFotos">
+                  <div class="mySlides fade">
+                      <img class="imagenes" src="./../../../assets/img/riu-buenavista/buenavista1.jpg">
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>    
+              <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+  </script>

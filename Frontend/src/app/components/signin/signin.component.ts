@@ -26,7 +26,9 @@ export class SigninComponent implements OnInit {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/inicio'])
       },      
-      err => console.log(err)
+      err => {
+        alert("El usuario o la contraseña son incorrectos");
+      }
     )
   }
 }

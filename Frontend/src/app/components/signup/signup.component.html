@@ -1,56 +1,46 @@
-<body>
-    <header id="navegador">
-        <img id="logo" src="../assets/img/logo_riu.jpg">
-    </header>
-    <ul class="menu">
-    <li><a routerLink="/inicio" routerLinkActive="active"> Home </a></li>
-    <li><a class="active" routerLink="/signup" routerLinkActive="active"> Crear cuenta </a></li>
-    <li><a routerLink="/signin" routerLinkActive="active"> Mi cuenta </a></li>
-    </ul>
-    <div class="contenedor">
-        <div class="tarjeta">
-            <p id="titulo"> CREAR UN NUEVO USUARIO </p>
-            <hr>
-            <img src="../../../assets/img/user_icon.png" class="imagenUsuario">
-            
-            
-            <div class="input">
-                <form name="formulario" (submit)="signUp()">
-                    <div id="Entrada">
-                        <label id="nombreUsuario"> Nombre de usuario (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
-                    </div>
-                    <div id="Entrada">
-                        <label id="contrasena"> Contraseña (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
-                    </div>
-                    <div id="Entrada">
-                        <label id="nombre"> Nombre (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.nombre"  name="nombre" id="nombreInput" type="text" required placeholder="Pepe">
-                    </div>
-                    <div id="Entrada">
-                        <label id="apellidos"> Apellidos (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.apellidos" name="apellidos" id="apellidosInput" type="text" required placeholder="Morales">
-                    </div>
-                    <div id="Entrada">
-                        <label id="fechaNacimiento"> Fecha Nacimiento </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.fecha_nacimiento" name="fechaNacimiento" id="fechaNacimientoInput" type="date" required>
-                    </div>
-                    <div id="Entrada">
-                        <label id="telefono"> Teléfono (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.telefono" name="telefono" id="telefonoInput" type="text" required placeholder="654789321">     
-                    </div>
-                    <div id="Entrada">
-                        <label id="dni"> DNI (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.dni" name="dni" id="dniInput" type="text" required placeholder="65004204-V">
-                    </div>
-                    <div id="Entrada">
-                        <label id="correo"> Correo electrónico (*) </label>
-                        <input class="EntradaTexto" [(ngModel)]="user.correo_electronico" name="correo_electronico" id="correoInput" type="text" required placeholder="pepemorales@gmail.com">
-                    </div>
-                    <button id="botonComprobar" type="submit">CREAR USUARIO</button>
-                </form>
-            </div>
+<div class="contenedor">
+    <div class="tarjeta">
+        <p id="titulo"> CREAR UN NUEVO USUARIO </p>
+        <hr>
+        <img src="../../../assets/img/user_icon.png" class="imagenUsuario">
+        
+        
+        <div class="input">
+            <form name="formulario" (submit)="signUp()">
+                <div id="Entrada">
+                    <label id="nombreUsuario"> Nombre de usuario (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.nombre_usuario"  name="nombreDeUsuario" id="nombreUsuarioInput" type="text" required placeholder="pepe123">
+                </div>
+                <div id="Entrada">
+                    <label id="contrasena"> Contraseña (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.contrasena"  name="contraseña" id="contrasenaInput" type="password" required >
+                </div>
+                <div id="Entrada">
+                    <label id="nombre"> Nombre (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.nombre"  name="nombre" id="nombreInput" type="text" required placeholder="Pepe">
+                </div>
+                <div id="Entrada">
+                    <label id="apellidos"> Apellidos (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.apellidos" name="apellidos" id="apellidosInput" type="text" required placeholder="Morales">
+                </div>
+                <div id="Entrada">
+                    <label id="fechaNacimiento"> Fecha Nacimiento </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.fecha_nacimiento" name="fechaNacimiento" id="fechaNacimientoInput" type="date" required>
+                </div>
+                <div id="Entrada">
+                    <label id="telefono"> Teléfono (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.telefono" name="telefono" id="telefonoInput" type="text" required placeholder="654789321">     
+                </div>
+                <div id="Entrada">
+                    <label id="dni"> DNI (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.dni" name="dni" id="dniInput" type="text" required placeholder="65004204-V">
+                </div>
+                <div id="Entrada">
+                    <label id="correo"> Correo electrónico (*) </label>
+                    <input class="EntradaTexto" [(ngModel)]="user.correo_electronico" name="correo_electronico" id="correoInput" type="text" required placeholder="pepemorales@gmail.com">
+                </div>
+                <button id="botonComprobar" type="submit">CREAR USUARIO</button>
+            </form>
         </div>
     </div>
-</body>
+</div>
